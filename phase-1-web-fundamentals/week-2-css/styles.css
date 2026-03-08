@@ -1,0 +1,133 @@
+/*
+  Week 2 — styles.css
+  -------------------
+  This file controls the visual appearance of your HTML form.
+
+  SETUP: Copy your completed index.html from week-1-html/ into this folder.
+  Then add this line inside the <head> of your index.html:
+    <link rel="stylesheet" href="styles.css" />
+
+  Work through the TODOs in order.
+  Every rule you write should have a clear reason — add a comment explaining why.
+*/
+
+
+/* ============================================================
+   TODO 1: PAGE-LEVEL RESET & BASE STYLES
+   
+   Browsers apply their own default styles to elements (margins,
+   padding, fonts). Reset the ones that cause inconsistency.
+   
+   Apply these to the <body> element:
+   - Remove the default margin
+   - Set a background colour (try #f0f2f5 for a subtle grey)
+   - Set a base font-family (try: font-family: system-ui, sans-serif;)
+     system-ui uses the OS's default clean font — no Google Fonts needed
+   - Set a base font-size (16px is the standard readable default)
+   ============================================================ */
+
+
+/* ============================================================
+   TODO 2: CENTRE THE MAIN CONTENT AREA
+
+   Target the <main> element. Use these properties to create
+   a centred, readable content column:
+   - max-width: 600px  (prevents lines from getting too long)
+   - margin: 40px auto (auto left/right margin = horizontal centering)
+   - padding: 32px     (internal breathing room)
+   - background: white
+   - border-radius: 8px (slightly rounded corners — modern, clean look)
+
+   Why max-width instead of width?
+   width: 600px is always 600px, even on a 400px phone screen.
+   max-width: 600px means "up to 600px, but shrink if needed."
+   ============================================================ */
+
+
+/* ============================================================
+   TODO 3: STYLE THE HEADING
+
+   Target the <h1>. At minimum:
+   - colour (try #1a1a2e or a dark blue/grey)
+   - margin-bottom to create space between heading and form
+   ============================================================ */
+
+
+/* ============================================================
+   TODO 4: STYLE THE FORM LAYOUT
+
+   Target the <form> element.
+   Use Flexbox to stack the form fields vertically with spacing:
+   - display: flex
+   - flex-direction: column
+   - gap: 16px  (gap adds space between flex children — cleaner than margins)
+   ============================================================ */
+
+
+/* ============================================================
+   TODO 5: STYLE THE LABELS
+
+   Target <label> elements. Make them behave as block-level elements
+   and add a small margin below the text (before the input).
+   Also try: font-weight: 500 (slightly bold, not full bold)
+   ============================================================ */
+
+
+/* ============================================================
+   TODO 6: STYLE THE INPUTS AND SELECT
+
+   Target both <input> and <select> together (comma-separated selectors):
+   input, select { }
+
+   Apply:
+   - width: 100%        (fill the available column width)
+   - padding: 10px 12px (vertical, horizontal — gives inputs breathing room)
+   - border: 1px solid #ccc
+   - border-radius: 4px
+   - font-size: 16px    (prevents iOS from auto-zooming on focus)
+   - box-sizing: border-box  (makes width include padding — important gotcha)
+   ============================================================ */
+
+
+/* ============================================================
+   TODO 7: STYLE THE SUBMIT BUTTON
+
+   The button should look clearly different from the inputs.
+   Target the <button> element:
+   - background colour (something intentional — try #2563eb for a clear blue)
+   - color: white
+   - padding: 12px 24px
+   - border: none
+   - border-radius: 4px
+   - font-size: 16px
+   - cursor: pointer   (shows hand cursor on hover — standard UX)
+   - width: 100%       (consistent with inputs above)
+   ============================================================ */
+
+
+/* ============================================================
+   TODO 8: ADD A HOVER STATE TO THE BUTTON
+
+   CSS can respond to user interactions using pseudo-classes.
+   :hover applies when the mouse is over the element.
+
+   button:hover {
+     background: ???;  (try a slightly darker shade of your button colour)
+   }
+
+   This is your first taste of stateful styling — similar to how
+   you'd conditionally apply formatting in Python based on a condition.
+   ============================================================ */
+
+
+/* ============================================================
+   STRETCH GOAL (only after TODOs 1-8 are done):
+   Add a focus state to your inputs.
+   :focus applies when an element is selected/clicked.
+
+   input:focus, select:focus {
+     outline: none;
+     border-color: ???;       (match your button colour for consistency)
+     box-shadow: 0 0 0 3px ???; (a subtle glow effect)
+   }
+   ============================================================ */

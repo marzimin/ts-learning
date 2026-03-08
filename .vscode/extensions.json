@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ritwickdey.liveserver",
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "rangav.vscode-thunder-client"
+  ]
+}
