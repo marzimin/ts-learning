@@ -1,8 +1,13 @@
 /**
  * Week 6 — Async JS: fetch, Promises & async/await
  * --------------------------------------------------
+ * This is your annotated starter (app_learning.js). Work the TODOs here, then
+ * save a clean copy (teaching comments stripped) as `app.js` — the file your
+ * HTML links and your committed deliverable. (See the learning-file
+ * convention in the root README.)
+ *
  * SETUP: Copy your index.html and styles.css from week-5/ into this folder.
- * This app.js replaces the one from Week 5.
+ * The clean app.js you produce here replaces the one from Week 5.
  *
  * This week's goal: replace the hardcoded fake prediction with a real
  * API call using fetch() and async/await.

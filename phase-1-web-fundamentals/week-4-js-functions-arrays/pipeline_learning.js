@@ -1,7 +1,12 @@
 /**
  * Week 4 — JS Functions & Array Methods
  * ---------------------------------------
- * Run this file with: node pipeline.js
+ * This is your annotated starter (pipeline_learning.js). Work the TODOs here.
+ * Run it while developing with: node pipeline_learning.js
+ *
+ * When the week is done, save a clean copy with the teaching comments
+ * stripped out as `pipeline.js` — that is your committed deliverable.
+ * (See the learning-file convention in the root README.)
  *
  * Goal: build a mini model evaluation pipeline using array methods.
  * This should feel like a simplified pandas pipeline — no loops needed.

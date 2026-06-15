@@ -1,5 +1,8 @@
 # Week 5 — JS Objects & The DOM
 
+> **Track: 🛠️ BUILD** — hand-write the DOM wiring yourself. Claude is reviewer only (Modes 1–4).
+> See [CLAUDE.md](../../CLAUDE.md).
+
 ## Concept
 
 This week combines two things: **objects** (JS's core data structure)
@@ -106,10 +109,14 @@ Wire up your HTML form from Weeks 1-2 with JavaScript.
 **Setup:**
 1. Copy your `index.html` and `styles.css` from `week-2-css/` into this folder
 2. Add `<script src="app.js"></script>` just before the closing `</body>` tag in your HTML
+   (the clean `app.js` you produce — see below)
 3. Add `id` attributes to each of your input fields (e.g. `id="age"`, `id="income"`)
 4. Add `id="result"` to a new `<div>` below your submit button (you'll write to it from JS)
 
-**Requirements in `app.js`:**
+Work the TODOs in `app_learning.js` (your annotated starter). When a milestone works, save a
+clean, comment-stripped copy as `app.js` — that's the file your HTML links and your deliverable.
+
+**Requirements (write these in `app_learning.js`):**
 1. Listen for the form's submit event
 2. Prevent the default form behaviour (it would refresh the page — stop that first)
 3. Read the values from each input field using `document.querySelector()`
@@ -153,7 +160,7 @@ Give me a hint — don't give me the solution."
 "Review this JavaScript I wrote to handle my form submission.
 Do NOT rewrite it. Tell me: what I got right, what could be improved,
 any concepts I'm misunderstanding, and one follow-up exercise.
-[paste your app.js here]"
+[paste your app_learning.js here]"
 ```
 
 ---

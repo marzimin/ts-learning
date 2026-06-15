@@ -1,6 +1,11 @@
 /**
  * Week 5 — JavaScript Objects & The DOM
  * ---------------------------------------
+ * This is your annotated starter (app_learning.js). Work the TODOs here.
+ * When a milestone works, save a clean copy (teaching comments stripped) as
+ * `app.js` — that clean file is the one your HTML links and your committed
+ * deliverable. (See the learning-file convention in the root README.)
+ *
  * This script connects your HTML form to JavaScript.
  *
  * SETUP (do this before writing any code here):
@@ -9,7 +14,7 @@
  *      e.g. <input type="number" name="age" id="age" />
  *   3. Add a result div below your submit button:
  *      <div id="result"></div>
- *   4. Link this script in your HTML just before </body>:
+ *   4. Link your clean script in your HTML just before </body>:
  *      <script src="app.js"></script>
  *
  * Then open index.html with Live Server and open the browser console.

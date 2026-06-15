@@ -1,5 +1,8 @@
 # Week 4 — JS Functions & Array Methods
 
+> **Track: 🛠️ BUILD** — hand-write all transforms yourself. Claude is reviewer only (Modes 1–4).
+> See [CLAUDE.md](../../CLAUDE.md).
+
 ## Concept
 
 JavaScript functions are first-class citizens — exactly like Python. You can assign
@@ -78,7 +81,9 @@ const sorted = [...scores].sort()  // spread operator creates a copy
 
 ## 🛠️ Your Task
 
-Write a Node.js script in `pipeline.js` that simulates a mini model evaluation pipeline.
+Work the TODOs in `pipeline_learning.js` (your annotated starter); when done, save a clean,
+comment-stripped copy as `pipeline.js` — that's your deliverable. This script simulates a mini
+model evaluation pipeline.
 
 **Requirements:**
 1. Declare an array of 10 prediction scores (mix of values between 0.0 and 1.0)
@@ -92,7 +97,7 @@ Write a Node.js script in `pipeline.js` that simulates a mini model evaluation p
 { total: 10, positives: 6, negatives: 4, averageScore: 0.57 }
 ```
 
-**Run it with:** `node pipeline.js`
+**Run it with:** `node pipeline_learning.js` while developing (then `node pipeline.js` for the clean version)
 
 ---
 
@@ -111,7 +116,7 @@ Don't write my project code — just explain the concept."
 "Review this JavaScript pipeline I wrote. Do NOT rewrite it.
 Tell me: what I got right, what could be improved and why,
 any concepts I'm misunderstanding, and one follow-up exercise.
-[paste your pipeline.js here]"
+[paste your pipeline_learning.js here]"
 ```
 
 ---

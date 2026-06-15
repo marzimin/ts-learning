@@ -6,6 +6,11 @@ from scratch — with the goal of building production-ready ML app frontends and
 **Approach:** Learn by doing. Every folder contains starter files with `TODO` comments.
 Write the code yourself first. Use Claude Code as a reviewer and teacher — not a code generator.
 
+> **Core principle:** Hand-write the things I need to read, debug, and judge.
+> Vibe-code the things I only need to assemble. Never accept generated code I can't explain.
+> The full behavioural contract for Claude Code lives in [CLAUDE.md](CLAUDE.md) and is loaded
+> automatically at the start of every session.
+
 ---
 
 ## 🖥️ Environment Setup (Do This First)
@@ -49,30 +54,54 @@ Open Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) → type "Open User Settin
 
 ### 4. Clone This Repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/ts-learning-journey.git
-cd ts-learning-journey
+git clone https://github.com/YOUR_USERNAME/ts-learning.git
+cd ts-learning
 ```
 
 ---
 
 ## 📚 Learning Plan Overview
 
-| Phase | Focus | Est. Duration |
-|---|---|---|
-| **Phase 1** ← You are here | Web Fundamentals (HTML, CSS, JS) | ~6-8 weeks |
-| Phase 2 | TypeScript Core | ~8-10 weeks |
-| Phase 3 | React + TypeScript | ~10-12 weeks |
-| Phase 4 | Next.js (Full-Stack) | ~8-10 weeks |
-| Phase 5 | APIs & Backend with TypeScript | ~8-10 weeks |
-| Phase 6 | Capstone ML Application | ~8-12 weeks |
+| Phase | Focus | Est. Duration | Status |
+|---|---|---|---|
+| **Phase 1** ← You are here | Web Fundamentals (HTML, CSS, JS) | ~6-8 weeks | Active |
+| Phase 2 | TypeScript Core | ~8-10 weeks | Unlocks after Phase 1 |
+| Phase 3 | React + TypeScript | ~10-12 weeks | Locked |
+| Phase 4 | Next.js (Full-Stack) | ~8-10 weeks | Locked |
+| Phase 5 | APIs & Backend with TypeScript | ~4-5 weeks | Compressed — Zod is the only Build-track topic; backend stays Python (FastAPI) |
+| Phase 6 | Capstone ML Application | ~8-12 weeks | Locked |
 
 **Time commitment:** 1-3 hours/week. Steady consistency beats intensity.
+
+> **Scope note:** The goal is to *build and judge* ML app frontends, not to become a frontend
+> engineer. CSS internals, React internals (Fiber/reconciliation), design systems, and a full
+> Node/Express backend are explicitly **out of scope** — see [CLAUDE.md](CLAUDE.md) for the full list.
+
+---
+
+## 🛠️⚡ The Two-Track System
+
+Every topic is tagged as one of two tracks. This is what keeps AI from eroding the skill being built:
+
+| Track | What it means | Claude's role |
+|---|---|---|
+| 🛠️ **Build** | I hand-write the code myself first (type system, async, data transforms, React data flow, the client↔server boundary, Zod) | Reviewer only — never generates Build-track code unprompted |
+| ⚡ **Vibe** | AI may generate it (CSS, HTML scaffolding, file structure, build/deploy config, UI-shell components) | Generates, then runs the **Mandatory Review Gate** |
+
+**Mandatory Review Gate** — after *any* Vibe-track code is generated, before moving on:
+walk through it in plain English → name one thing to understand before production → name one thing
+that breaks if requirements change → answer one comprehension question. If I can't answer, we stay in review.
+
+Each week folder is tagged with its track at the top of its `README.md`.
 
 ---
 
 ## 🤖 How to Use Claude Code (The Rules)
 
-Claude Code is your **teacher and reviewer** — not your code writer. Use it in these four modes only:
+Claude Code is your **teacher and reviewer** — not your code writer. The complete, machine-loaded
+contract lives in [CLAUDE.md](CLAUDE.md); the four modes below are the everyday summary. On the
+**Build track** use Modes 1–4 only (Claude never writes the code). On the **Vibe track** Claude may
+generate, but must immediately run the Mandatory Review Gate before you continue.
 
 ### Mode 1 — Concept Explainer (use BEFORE writing code)
 ```
@@ -139,24 +168,37 @@ git merge phase-1/week-1-html
 ## 📁 Repo Structure
 
 ```
-ts-learning-journey/
+ts-learning/
+├── CLAUDE.md                          ← Claude Code's behavioural contract (loaded each session)
 ├── README.md                          ← You are here
 ├── .gitignore
+├── .editorconfig                      ← 2-space indentation, enforced editor-wide
+├── .prettierrc                        ← Formatting rules
+├── eslint.config.mts                  ← Code-convention rules (no-var, prefer-const, eqeqeq)
+├── package.json                       ← Dev tooling + `npm run lint`
 ├── phase-1-web-fundamentals/
 │   ├── README.md                      ← Phase overview
-│   ├── week-1-html/
+│   ├── week-1-html/                   ← 🛠️ BUILD
 │   │   ├── README.md                  ← Concept explanation + task
 │   │   ├── NOTES.md                   ← Your learning journal (fill this in)
-│   │   └── index.html                 ← Starter file with TODOs
-│   ├── week-2-css/
-│   ├── week-3-js-basics/
-│   ├── week-4-js-functions-arrays/
-│   ├── week-5-js-objects-dom/
-│   ├── week-6-js-async/
-│   └── week-7-8-mini-project/
+│   │   ├── index.html                 ← Clean final deliverable
+│   │   └── index_learning.html        ← Annotated working copy (teaching comments kept)
+│   ├── week-2-css/                    ← ⚡ VIBE
+│   ├── week-3-js-basics/              ← 🛠️ BUILD
+│   ├── week-4-js-functions-arrays/    ← 🛠️ BUILD
+│   ├── week-5-js-objects-dom/         ← 🛠️ BUILD
+│   ├── week-6-js-async/               ← 🛠️ BUILD
+│   └── week-7-8-mini-project/         ← 🛠️ BUILD logic, ⚡ VIBE layout
 ├── phase-2-typescript/                ← Unlocks after Phase 1
 ├── phase-3-react/
 ├── phase-4-nextjs/
 ├── phase-5-backend/
 └── phase-6-capstone/
 ```
+
+### Learning-file convention
+
+For Build-track weeks, the starter file ships with `TODO` comments and teaching annotations.
+Keep your annotated working copy as `*_learning.<ext>` (e.g. `index_learning.html`) and produce a
+**clean final deliverable** with the teaching comments stripped (e.g. `index.html`). The clean file
+is what you'd ship; the `*_learning` file is your reasoning trail. Both are committed.

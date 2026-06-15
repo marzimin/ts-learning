@@ -1,5 +1,8 @@
 # Week 3 — JavaScript Basics: Variables, Types & Control Flow
 
+> **Track: 🛠️ BUILD** — hand-write all logic yourself. Claude is reviewer only (Modes 1–4).
+> See [CLAUDE.md](../../CLAUDE.md).
+
 ## Concept
 
 JavaScript is the programming language of the web — and it's closer to Python
@@ -60,8 +63,8 @@ Unlike HTML (which needs a browser), `.js` files can be run directly in your ter
 # Navigate to this week's folder
 cd phase-1-web-fundamentals/week-3-js-basics
 
-# Run your script
-node script.js
+# Run your annotated working file while developing
+node script_learning.js
 ```
 
 This is exactly like running `python script.py`.
@@ -70,7 +73,9 @@ This is exactly like running `python script.py`.
 
 ## 🛠️ Your Task
 
-Write a Node.js script in `script.js` that simulates a basic classification output.
+Work the TODOs in `script_learning.js` (your annotated starter); when done, save a clean,
+comment-stripped copy as `script.js` — that's your deliverable. This script simulates a basic
+classification output.
 
 **Requirements:**
 1. Declare `const` variables for at least 3 model input features (age, income, creditScore, etc.)
@@ -82,7 +87,7 @@ Write a Node.js script in `script.js` that simulates a basic classification outp
    - else → "Low Risk"
 5. Log the final classification
 
-**Run it with:** `node script.js`
+**Run it with:** `node script_learning.js` while developing (then `node script.js` for the clean version)
 
 ---
 

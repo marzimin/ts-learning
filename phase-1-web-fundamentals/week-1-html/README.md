@@ -1,5 +1,8 @@
 # Week 1 — HTML: The Structure Layer
 
+> **Track: 🛠️ BUILD** — hand-write the structure yourself. Claude is reviewer only (Modes 1–4),
+> and never writes your `index.html`. See [CLAUDE.md](../../CLAUDE.md).
+
 ## Concept
 
 HTML (HyperText Markup Language) is not a programming language — it has no logic,
