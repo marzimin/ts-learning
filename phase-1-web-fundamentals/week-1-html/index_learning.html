@@ -1,0 +1,149 @@
+<!doctype html>
+<!--
+  DOCTYPE tells the browser this is a modern HTML5 document.
+  Always include this as the very first line.
+-->
+
+<html lang="en">
+  <!--
+    The <html> element is the root of the document.
+    lang="en" tells browsers (and screen readers) the page language.
+  -->
+
+  <head>
+    <!--
+      <head> contains metadata — information ABOUT the page.
+      Nothing inside <head> is visible on the page itself.
+    -->
+
+    <meta charset="UTF-8" />
+    <!-- UTF-8 ensures characters like £, €, and emoji render correctly -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- This makes the page work correctly on mobile screens -->
+
+    <!-- TODO 1: Add a <title> tag that shows in the browser tab.
+         Example: "Loan Default Predictor" or whatever fits your model.
+         Syntax: <title>Your Title Here</title>
+    -->
+    <title>Loan Default Predictor</title>
+  </head>
+
+  <body>
+    <!--
+      <body> contains everything the user sees.
+      Structure it semantically — think of it like organising a Python module
+      into logical sections rather than dumping everything at the top level.
+    -->
+
+    <main>
+      <!--
+        <main> wraps the primary content of the page.
+        There should only be ONE <main> per page.
+        This is semantic HTML — it tells the browser (and screen readers)
+        "this is the important stuff."
+      -->
+
+      <!-- TODO 2: Add an <h1> heading that describes your form.
+           e.g. "Loan Default Risk Predictor" or "House Price Estimator"
+      -->
+      <h1>Loan Default Risk Predictor</h1>
+
+      <!-- TODO 3: Add a short <p> paragraph explaining what the form does.
+           e.g. "Enter the details below to get a model prediction."
+      -->
+      <p>Enter the details below to get a model prediction.</p>
+
+      <form>
+        <!--
+          <form> is the container for all your input elements.
+          It doesn't DO anything yet (no JavaScript) — we're just
+          building the structure this week.
+
+          IMPORTANT: Wrap each input in a <label> element.
+          This is like naming your DataFrame columns clearly.
+          It improves accessibility and is considered best practice.
+
+          Pattern to follow:
+          <label>
+            Descriptive Name:
+            <input type="..." name="..." />
+          </label>
+        -->
+
+        <!-- TODO 4: Add a number input for a numeric feature your model uses.
+             e.g. Age, Income, Credit Score, Loan Amount
+             Use type="number" for numeric fields.
+
+             Example structure (replace with your own field):
+             <label>
+               Age:
+               <input type="number" name="age" min="18" max="100" />
+             </label>
+        -->
+        <label>
+          Age:
+          <input type="number" name="age" min="18" max="100" />
+        </label>
+
+        <!-- TODO 5: Add a second numeric input field for another feature. -->
+        <label>
+          Income:
+          <input type="number" name="income" min="0" step="1000" />
+        </label>
+
+        <!-- TODO 6: Add a third input field. This one should be type="text".
+             e.g. Employer Name, Job Title
+        -->
+        <label>
+          Employer Name:
+          <input type="text" name="employer" />
+        </label>
+
+        <!-- TODO 7: Add a dropdown <select> field for a categorical feature.
+             e.g. Education Level, Employment Status, Loan Purpose
+
+             Example structure:
+             <label>
+               Education Level:
+               <select name="education">
+                 <option value="high_school">High School</option>
+                 <option value="bachelor">Bachelor's Degree</option>
+                 <option value="master">Master's Degree</option>
+                 <option value="phd">PhD</option>
+               </select>
+             </label>
+
+             Note: value="" is what gets sent to the server.
+             The text between tags is what the user sees.
+             This is like the difference between a category code and its label.
+        -->
+        <label>
+          Education Level:
+          <select name="education">
+            <option value="high_school">High School</option>
+            <option value="bachelor">Bachelor's Degree</option>
+            <option value="master">Master's Degree</option>
+            <option value="phd">PhD</option>
+          </select>
+        </label>
+
+        <!-- TODO 8: Add a submit button.
+             Use <button type="submit"> rather than <input type="submit">.
+             Give it a descriptive label, not just "Submit".
+             e.g. "Get Prediction" or "Calculate Risk Score"
+        -->
+        <button type="submit">Get Prediction</button>
+      </form>
+    </main>
+
+    <!--
+      STRETCH GOAL (optional, only after TODOs 1-8 are done):
+      Add a <footer> below </main> with your name and the date.
+      e.g. <footer><p>Built by [Your Name] — Phase 1, Week 1</p></footer>
+    -->
+    <footer>
+      <p>Built by me - Phase 1, Week 1</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "ts-learning",
+  "version": "0.1.0",
+  "description": "Self-paced TypeScript/React/Next.js learning journey for a Python/SQL data scientist",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^17.4.0",
+    "jiti": "^2.7.0",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.56.1"
+  }
+}

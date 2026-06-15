@@ -1,7 +1,12 @@
 /**
  * Week 3 — JavaScript Basics: Variables, Types & Control Flow
  * ------------------------------------------------------------
- * Run this file with: node script.js
+ * This is your annotated starter (script_learning.js). Work the TODOs here.
+ * Run it while developing with: node script_learning.js
+ *
+ * When the week is done, save a clean copy with the teaching comments
+ * stripped out as `script.js` — that is your committed deliverable.
+ * (See the learning-file convention in the root README.)
  *
  * Work through the TODOs in order.
  * After each TODO, run the script to see the output.

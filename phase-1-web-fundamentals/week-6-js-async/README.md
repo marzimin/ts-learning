@@ -1,5 +1,8 @@
 # Week 6 — Async JavaScript: fetch, Promises & async/await
 
+> **Track: 🛠️ BUILD** — hand-write the async/fetch and error handling yourself. Claude is reviewer
+> only (Modes 1–4). See [CLAUDE.md](../../CLAUDE.md).
+
 ## Concept
 
 Nearly everything in web development is **asynchronous** — network requests,
@@ -113,7 +116,10 @@ Update your form from Week 5 to call a real API.
 **Use:** [JSONPlaceholder](https://jsonplaceholder.typicode.com) — a free fake REST API.
 No API key needed.
 
-**Requirements in `app.js`:**
+Work the TODOs in `app_learning.js` (your annotated starter); save a clean, comment-stripped
+copy as `app.js` (the file your HTML links) as your deliverable.
+
+**Requirements (write these in `app_learning.js`):**
 1. On form submit, call `https://jsonplaceholder.typicode.com/users/1` using `fetch()`
 2. Make the function `async` and use `await`
 3. Check `response.ok` — throw an error if the request failed

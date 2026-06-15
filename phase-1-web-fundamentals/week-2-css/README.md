@@ -1,5 +1,11 @@
 # Week 2 — CSS: The Style Layer
 
+> **Track: ⚡ VIBE** — CSS is assemble-only. You may let Claude generate styling, but you MUST run
+> the Mandatory Review Gate before using it (walk through it in plain English, name one thing to
+> understand before production, name one thing that breaks if requirements change, answer one
+> comprehension question). Don't grind Flexbox mastery — read-and-tweak is the goal.
+> See [CLAUDE.md](../../CLAUDE.md).
+
 ## Concept
 
 CSS (Cascading Style Sheets) is a **rules engine**. You write selectors (what to target)
@@ -135,6 +141,16 @@ Give me a hint or a guiding question — don't give me the answer."
 Tell me: what I got right, what could be improved and why,
 any concepts I'm misunderstanding, and one follow-up exercise.
 [paste your styles.css here]"
+```
+
+**If you let Claude generate any CSS (Review Gate — mandatory before you keep it):**
+```
+"You generated this CSS. Run the Mandatory Review Gate on it:
+1. Walk through it section by section in plain English.
+2. Tell me one thing I must understand before using it in production.
+3. Tell me one thing that would break if my requirements changed.
+4. Ask me one question to confirm I follow the critical part.
+[paste the generated styles.css here]"
 ```
 
 ---

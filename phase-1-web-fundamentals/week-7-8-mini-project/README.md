@@ -1,5 +1,9 @@
 # Weeks 7-8 — Mini Project: Live Data Dashboard
 
+> **Track: 🛠️ BUILD logic, ⚡ VIBE layout** — hand-write the data fetching, transforms, and DOM
+> logic yourself; you may generate the CSS/layout, then run the Mandatory Review Gate on it.
+> See [CLAUDE.md](../../CLAUDE.md).
+
 ## Overview
 
 This is your Phase 1 capstone. No starter code — just a spec and a blank canvas.
