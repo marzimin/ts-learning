@@ -64,18 +64,46 @@ cd ts-learning
 
 | Phase | Focus | Est. Duration | Status |
 |---|---|---|---|
-| **Phase 1** ← You are here | Web Fundamentals (HTML, CSS, JS) | ~6-8 weeks | Active |
-| Phase 2 | TypeScript Core | ~8-10 weeks | Unlocks after Phase 1 |
-| Phase 3 | React + TypeScript | ~10-12 weeks | Locked |
-| Phase 4 | Next.js (Full-Stack) | ~8-10 weeks | Locked |
-| Phase 5 | APIs & Backend with TypeScript | ~4-5 weeks | Compressed — Zod is the only Build-track topic; backend stays Python (FastAPI) |
-| Phase 6 | Capstone ML Application | ~8-12 weeks | Locked |
+| Phase 1 | Web Fundamentals (HTML, CSS, JS) | ~6–8 weeks | Active |
+| Phase 2 | TypeScript Core (strict mode, generated types) | ~8–10 weeks | Unlocks after Phase 1 |
+| Phase 3 | React + TypeScript + TanStack Query | ~8 weeks | Locked |
+| Phase 4 | Vite, react-router, the proxy seam | ~4 weeks | Locked |
+| Phase 5 | The OpenAPI contract seam (`make types`) | ~2 weeks | Locked |
+| Phase 6 | Audit `ds-template`'s frontend | ~6 weeks | Locked |
 
-**Time commitment:** 1-3 hours/week. Steady consistency beats intensity.
+**Revised total: ~7 months** at 1–3 hrs/week (was 12–18 months).
+
+The reduction comes from cutting Next.js, Express, Prisma, and Zod — none of which appear
+in the target architecture — and from replacing a from-scratch capstone with an audit of
+the frontend that already exists in `ds-template`.
 
 > **Scope note:** The goal is to *build and judge* ML app frontends, not to become a frontend
-> engineer. CSS internals, React internals (Fiber/reconciliation), design systems, and a full
-> Node/Express backend are explicitly **out of scope** — see [CLAUDE.md](CLAUDE.md) for the full list.
+> engineer. CSS internals, React internals (Fiber/reconciliation), design systems, and
+> TypeScript backends are explicitly **out of scope** — see [CLAUDE.md](CLAUDE.md) for the full list.
+
+## Every exercise has a real counterpart
+
+The toy projects stay — they are how the fundamentals get hand-written. But each one maps
+to a specific file in `ds-template/frontend/src/`. Read the real file after finishing the
+toy version.
+
+| Toy exercise | Real counterpart in `ds-template` |
+|---|---|
+| Wk 6 — `fetch` + `response.ok` + try/catch | `api/client.ts` — `ApiError`, `readErrorDetail` |
+| Wk 7–8 — dashboard: fetch → 3 states → filter | `pages/RunsPage.tsx` |
+| Wk 4 — array transforms | `metricColumns()` in `RunsPage.tsx` — Set union, then sort |
+| Wk 5 — form reads inputs into an object | `components/FeatureForm.tsx` — but generated from the model signature |
+| Wk 3 — classify by threshold | `lib/format.ts` — formats by magnitude, never by metric name |
+
+### Assigned reading before Phase 3
+
+`ds-template/docs/architecture.md`, sections 1–2. Its script-versus-server framing (a
+pipeline runs and exits; a server loads the model once and waits forever) is the concept
+that makes the rest of the frontend intelligible. It is already written for a data
+scientist who has not built a web app.
+
+Then `ds-template/docs/frontend.md` — in particular "The four ideas you actually need"
+and the four dataset-agnostic rules.
 
 ---
 
@@ -85,7 +113,7 @@ Every topic is tagged as one of two tracks. This is what keeps AI from eroding t
 
 | Track | What it means | Claude's role |
 |---|---|---|
-| 🛠️ **Build** | I hand-write the code myself first (type system, async, data transforms, React data flow, the client↔server boundary, Zod) | Reviewer only — never generates Build-track code unprompted |
+| 🛠️ **Build** | I hand-write the code myself first (type system, async, data transforms, React data flow, the client↔server boundary, the three-state fetch pattern, reading generated types) | Reviewer only — never generates Build-track code unprompted |
 | ⚡ **Vibe** | AI may generate it (CSS, HTML scaffolding, file structure, build/deploy config, UI-shell components) | Generates, then runs the **Mandatory Review Gate** |
 
 **Mandatory Review Gate** — after *any* Vibe-track code is generated, before moving on:
@@ -190,10 +218,12 @@ ts-learning/
 │   ├── week-6-js-async/               ← 🛠️ BUILD
 │   └── week-7-8-mini-project/         ← 🛠️ BUILD logic, ⚡ VIBE layout
 ├── phase-2-typescript/                ← Unlocks after Phase 1
-├── phase-3-react/
-├── phase-4-nextjs/
-├── phase-5-backend/
-└── phase-6-capstone/
+├── phase-3-react/                     ← React + TanStack Query
+├── phase-4-vite-routing/              ← Vite, react-router, the proxy seam
+├── phase-5-api-contract/              ← Generated types, `make types`
+├── phase-6-frontend-audit/            ← Review Gate over ds-template's frontend
+└── docs/
+    └── nextjs-vs-vite.md              ← Why this repo targets Vite, and when Next.js wins
 ```
 
 ### Learning-file convention
