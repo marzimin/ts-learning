@@ -9,8 +9,27 @@
 ## Who I Am
 
 - **Background:** Data Scientist — Python and SQL are primary languages
-- **Goal:** Learn enough TypeScript, React, and Next.js to build, ship, and maintain ML app frontends and full-stack applications — not to become a frontend engineer
+- **Goal:** Learn enough TypeScript, React, and Vite to build, ship, and maintain ML app frontends against a Python/FastAPI backend — not to become a frontend engineer
 - **Current tools:** AI (Claude, Claude Code) can generate working frontend code. The risk is shipping code I can't read, debug, or judge. This repo exists to fix that.
+
+---
+
+## Target Architecture
+
+All work in this repo builds toward the stack used by `ds-template`:
+
+| Layer | Technology |
+|---|---|
+| Build tool / dev server | **Vite** (not Next.js) |
+| UI library | React 19 + TypeScript (strict, incl. `noUncheckedIndexedAccess`) |
+| Routing | **react-router v8** — routes declared in `src/App.tsx` |
+| Data fetching | **TanStack Query** — one hook per endpoint |
+| API types | **Generated** from FastAPI's OpenAPI doc via `make types` |
+| Backend | **Python / FastAPI** — serving MLflow models |
+| Deployment | Docker Compose |
+
+IMPORTANT: Claude MUST NOT suggest Next.js, Express, Prisma, or Zod solutions in this
+repo. If a concept is usually taught via one of those, translate it to the stack above.
 
 ---
 
@@ -36,8 +55,10 @@ Topics where I must author code myself before any AI involvement:
 - Async/await, fetch, error handling patterns
 - JS data transforms (map, filter, reduce)
 - React data flow — props, state, when things re-render
-- The client ↔ server boundary (Next.js API routes ↔ Python FastAPI)
-- Input validation with Zod
+- The client ↔ server boundary (Vite proxy → FastAPI; relative `/api/...` URLs)
+- The three-state fetch pattern (pending / error / success) and why missing one gives a blank screen
+- Reading generated types — `schema.d.ts`, and what `make types` does
+- Discriminated unions (how TanStack Query's result type narrows)
 
 **Claude's role on Build Track:** Concept Explainer (before) or Rubber Duck Reviewer (after). NEVER generate Build Track code unprompted.
 
@@ -105,7 +126,10 @@ Claude should NOT spend session time on these unless I explicitly ask:
 - CSS internals beyond "read and tweak" (no Flexbox mastery exercises)
 - React internals (Fiber, reconciliation, render optimization)
 - Senior frontend architecture (design systems, micro-frontends, Core Web Vitals)
-- Full Node/Express backend — my backend is Python (FastAPI). TS backend knowledge = Next.js API routes that proxy to Python only.
+- Node/Express/Prisma backends — the backend is Python (FastAPI). No TypeScript backend exists.
+- Zod — the API contract is generated from Pydantic, not hand-written in TypeScript.
+- Next.js — deprioritised, not cut. See `docs/nextjs-vs-vite.md` for when it would apply.
+- Server-side rendering, server components, SEO — the target app is an authenticated SPA.
 - Browser compatibility and polyfills
 - Frontend interview prep topics
 
@@ -127,9 +151,9 @@ ts-learning/
 │   └── week-7-8-mini-project/         ← BUILD logic, VIBE layout
 ├── phase-2-typescript/                ← BUILD everything (unlocks after Phase 1)
 ├── phase-3-react/                     ← BUILD data flow, VIBE components
-├── phase-4-nextjs/                    ← BUILD API boundary, VIBE routing config
-├── phase-5-backend/                   ← Compressed: Zod only is BUILD track
-└── phase-6-capstone/                  ← Locked
+├── phase-4-vite-routing/              ← ⚡ VIBE config, 🛠️ BUILD the proxy seam
+├── phase-5-api-contract/              ← 🛠️ BUILD: generated types, `make types`
+└── phase-6-frontend-audit/            ← 🛠️ BUILD: gate ds-template's existing frontend
 ```
 
 Each week folder contains:
@@ -180,7 +204,7 @@ Run `npm run lint` before committing.
 | `json.dumps(data)` | `JSON.stringify(data)` |
 | `response.json()` | `await response.json()` |
 | `from module import x` | `import { x } from './module'` |
-| `pydantic BaseModel` | `zod schema` |
+| `pydantic BaseModel` | generated `schema.d.ts` type (via `make types`) |
 
 ---
 
