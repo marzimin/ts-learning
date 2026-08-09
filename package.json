@@ -1,7 +1,7 @@
 {
   "name": "ts-learning",
   "version": "0.1.0",
-  "description": "Self-paced TypeScript/React/Next.js learning journey for a Python/SQL data scientist",
+  "description": "Self-paced TypeScript/React/Vite learning journey for a Python/SQL data scientist",
   "private": true,
   "type": "module",
   "scripts": {
